@@ -1,6 +1,6 @@
 package leetcode.com
 
-class ContainerWithMostWater {
+object ContainerWithMostWater {
   def maxArea(height: Array[Int]): Int = {
     var max: Int = 0
     var maxTmp: Int = 0
