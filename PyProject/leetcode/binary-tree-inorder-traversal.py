@@ -10,4 +10,12 @@ class TreeNode:
 
 class BinaryTreeInorderTraversal:
     def inorderTraversal(self, root: TreeNode) -> List[int]:
-        passg
+        res = []
+        self.helper(root, res)
+        return res
+
+    def helper(self, root: TreeNode, res: List[int]):
+        if root:
+            self.helper(root.left, res)
+            res.append(root.val)
+            self.helper(root.right, res)
