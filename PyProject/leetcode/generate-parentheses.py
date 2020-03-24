@@ -4,8 +4,7 @@ from typing import List
 class GenerateParentheses:
     def generateParenthesis(self, n: int) -> List[str]:
         res = []
-        self.helper("", res, 0, 0, n)
-        res.reverse()
+        self.backtrack("", res, 0, 0, n)
         return res
 
     def is_valid(self, s: str) -> bool:
@@ -41,3 +40,12 @@ class GenerateParentheses:
             self.helper(s + "(", res, left + 1, right, max)
 
         # reverse the status the current if needed
+
+    def backtrack(self, s: str, res: List[str], left: int, right: int, max: int):
+        if len(s) == max*2:
+            res.append(s)
+            return
+        if left < max:
+            self.backtrack(s + "(", res, left + 1, right, max)
+        if right < left:
+            self.backtrack(s + ")", res, left, right + 1, max)
