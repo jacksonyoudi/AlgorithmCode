@@ -7,24 +7,11 @@ class TreeNode:
 
 class ValidateBinarySearchTree:
     def isValidBST(self, root: TreeNode) -> bool:
-        # terminator
-        if root:
-            if root.left:
-                if root.val < root.left.val:
-                    return False
+        return self.helper(root)
 
-            if root.right:
-                if root.val > root.right.val:
-                    return False
-
-            if root.left and root.right:
-                if root.left.val > root.right.val:
-                    return False
-
-            if not self.isValidBST(root.left):
-                return False
-
-            if not self.isValidBST(root.right):
-                return False
-
-        return True
+    def helper(self, root: TreeNode, min=float('-inf'), max=float('inf')) -> bool:
+        if not root:
+            return True
+        if not min < root.val < max:
+            return False
+        return self.helper(root.left, min, root.val) and self.helper(root.right, root.val, max)
