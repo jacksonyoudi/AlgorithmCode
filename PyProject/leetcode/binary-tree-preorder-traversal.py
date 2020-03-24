@@ -8,12 +8,11 @@ class TreeNode:
         self.right = None
 
 
-class BinaryTreeInorderTraversal:
-    def inorderTraversal(self, root: TreeNode) -> List[int]:
+class BinaryTreePreorderTraversal:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
         res = []
         if root:
-            res.extend(self.inorderTraversal(root.left))
             res.append(root.val)
-            res.extend(self.inorderTraversal(root.right))
+            res.extend(self.preorderTraversal(root.left))
+            res.extend(self.preorderTraversal(root.right))
         return res
-
