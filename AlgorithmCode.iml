@@ -6,7 +6,9 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Python 3.8 (AlgorithmCode) interpreter library" level="application" />
+    <orderEntry type="library" exported="" name="Python 3.8 (AlgorithmCode) interpreter library" level="application" />
+    <orderEntry type="library" exported="" name="scala-sdk-2.11.12" level="application" />
   </component>
 </module>
