@@ -11,6 +11,6 @@ class BubbleSort:
 
 
 if __name__ == '__main__':
-    a = [1, 4, 3, 6, 9, 2]
+    a = [1, 4, 3, 6, 9, 2, 0, 7, 8, 5]
     a = BubbleSort.bubble_sourt(a)
     print(a)
