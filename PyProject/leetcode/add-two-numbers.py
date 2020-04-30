@@ -6,11 +6,9 @@ class ListNode:
 
 
 def helper(l1: ListNode, l2: ListNode, res: ListNode) -> ListNode:
-    if l1 is
-
+    pass
 
 
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-
         helper(l1, l2)
