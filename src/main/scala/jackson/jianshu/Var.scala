@@ -11,7 +11,5 @@ object Var {
     println(i)
     println(j)
 
-
-
   }
 }
