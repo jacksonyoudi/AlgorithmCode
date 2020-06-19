@@ -9,9 +9,6 @@ def m():
     # dtype ndmin
 
 
-
-
-
     print(a)
 
 
