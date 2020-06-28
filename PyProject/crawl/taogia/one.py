@@ -29,39 +29,6 @@ if __name__ == '__main__':
         "X-Requested-With": "XMLHttpRequest",
     }
 
-    params = {
-        "uid": "1587547404780001",
-        "sign": "de8a1a5f42b253fff654785d70afaee7",
-        "www": "www.taogia.com",
-        "dollar_rate": 7.25,
-        "order_tj": 1,
-        "order_sx": 1,
-        "is_accurate_and_detail": 1,
-        "detail": 10402,
-        "rap_ids": "",
-        "d_size_min": 0.45,
-        "d_size_max": 0.54,
-        "shape": "%E5%9C%86%E5%BD%A2",
-        "cut": "EX",
-        "color": "D,E",
-        "clarity": "FL,IF,VVS1,VVS2",
-        "polish": "EX",
-        "sym": "EX",
-        "flour": "NON",
-        "cert": "GIA",
-        "milky": "N",
-        "browness": "N",
-        "sys_status": -1,
-        "currentPage": 2,
-        "pageSize": 200
-    }
-
-    rep = requests.post(
-        "http://www.taogia.com/diamondCert/pc/diamondCert_interface_FindPageList_many_all_view_manager_specialty.xhtml",
-        params, headers=headers)
-    time.sleep(5)
-    print(rep.status_code)
-    data = rep.json().get("list")
     csv_txt = ['id', 'shape', 'd_size', 'color', 'clarity', 'cut', 'polish', 'sym', 'flour', 'm1', 'm2', 'm3',
                'd_depth', 'd_table', 'd_ref', 'reportNo', 'detail', 'disc', 'rate', 'location', 'certNo', 'milky',
                'eyeClean', 'browness', 'isbuy', 'los', 'isdisp', 'cert', 'types', 'disc1', 'oldRef', 'rap',
@@ -74,5 +41,38 @@ if __name__ == '__main__':
     with open("tab.csv", 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=csv_txt)
         writer.writeheader()
-        for i in data:
-            writer.writerow(i)
+        for i in range(1, 10):
+            print("i:", i)
+            params = {
+                "uid": "1587547404780001",
+                "sign": "de8a1a5f42b253fff654785d70afaee7",
+                "www": "www.taogia.com",
+                "dollar_rate": 7.25,
+                "order_tj": 1,
+                "order_sx": 1,
+                "is_accurate_and_detail": 1,
+                "detail": 10402,
+                "rap_ids": "",
+                "d_size_min": 0.45,
+                "d_size_max": 0.54,
+                "shape": "%E5%9C%86%E5%BD%A2",
+                "cut": "EX",
+                "color": "D,E",
+                "clarity": "FL,IF,VVS1,VVS2",
+                "polish": "EX",
+                "sym": "EX",
+                "flour": "NON",
+                "cert": "GIA",
+                "milky": "N",
+                "browness": "N",
+                "sys_status": -1,
+                "currentPage": i,
+                "pageSize": 200
+            }
+
+            rep = requests.post(
+                "http://www.taogia.com/diamondCert/pc/diamondCert_interface_FindPageList_many_all_view_manager_specialty.xhtml",
+                params, headers=headers)
+            data = rep.json().get("list")
+            for j in data:
+                writer.writerow(j)
