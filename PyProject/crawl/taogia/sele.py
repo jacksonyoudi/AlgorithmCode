@@ -13,8 +13,8 @@ if __name__ == '__main__':
     chrome_opt = Options()
     chrome_opt.add_argument('--headless')
     chrome_opt.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(chrome_options=chrome_opt)
-    driver.get("https://www.gia.edu/CN/report-check?reportno=2344610669")
+    driver = webdriver.Chrome(options=chrome_opt)
+    driver.get("https://www.gia.edu/CN/report-check?reportno=2201951132")
     time.sleep(10)
     print("hello")
     html = driver.page_source

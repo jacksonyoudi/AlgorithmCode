@@ -59,7 +59,6 @@ if __name__ == '__main__':
     rep = requests.post(
         "http://www.taogia.com/diamondCert/pc/diamondCert_interface_FindPageList_many_all_view_manager_specialty.xhtml",
         params, headers=headers)
-    time.sleep(5)
     print(rep.status_code)
     data = rep.json().get("list")
     csv_txt = ['id', 'shape', 'd_size', 'color', 'clarity', 'cut', 'polish', 'sym', 'flour', 'm1', 'm2', 'm3',
