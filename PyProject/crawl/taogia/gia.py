@@ -7,6 +7,8 @@ import csv
 from bs4 import BeautifulSoup
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
+import redis
+import json
 
 
 def get_gia_info(html):
@@ -31,6 +33,8 @@ def get_gia_info(html):
 
 
 if __name__ == '__main__':
+    rds = redis.Redis(host='localhost', port=6379, db=9)
+
     chrome_opt = Options()
     # chrome_opt.add_argument('--headless')
     # chrome_opt.add_argument('--disable-gpu')
@@ -41,7 +45,14 @@ if __name__ == '__main__':
         for row in reader:
             report_no = row.get("reportNo")
             print("Report No", report_no)
+            data = rds.get(report_no)
+            if data:
+                print("exists", data)
+                continue
             driver.get("https://www.gia.edu/CN/report-check?reportno={}".format(report_no))
             infos = get_gia_info(driver.page_source)
             print(infos)
+            if len(infos) > 0:
+                print("write redis")
+                rds.set(report_no, json.dumps(infos))
             # driver.close()
