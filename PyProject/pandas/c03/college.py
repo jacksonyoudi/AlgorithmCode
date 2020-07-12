@@ -11,5 +11,5 @@ if __name__ == '__main__':
     collage = pd.read_csv("../data/college.csv")
     print(collage.head())
     print(collage.shape)
-    print(collage.dtype)
-
+    different_cols = ['RELAFFIL', 'SATMTMID', 'CURROPER', 'INSTNM', 'STABBR']
+    col2 = collage.loc[:, different_cols]
