@@ -24,4 +24,4 @@ if __name__ == '__main__':
                                        ascending=[False, False, True])
 
     movie4_sorted.drop_duplicates(subset=['title_year', 'content_rating']).head(10)
-    
+
