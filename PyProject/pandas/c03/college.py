@@ -13,3 +13,6 @@ if __name__ == '__main__':
     print(collage.shape)
     different_cols = ['RELAFFIL', 'SATMTMID', 'CURROPER', 'INSTNM', 'STABBR']
     col2 = collage.loc[:, different_cols]
+
+    # 查看每列的内存消耗
+    col2.memory_usage(deep=True)
