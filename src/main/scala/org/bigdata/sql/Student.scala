@@ -25,7 +25,7 @@ object Student {
     df.createOrReplaceGlobalTempView("stu_df")
     ds.createOrReplaceTempView("stu_ds")
 
-    spark.sql()
+//    spark.sql()
 
   }
 }
