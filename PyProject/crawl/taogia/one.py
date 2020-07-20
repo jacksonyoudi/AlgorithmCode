@@ -36,12 +36,14 @@ if __name__ == '__main__':
                'is_size_normal', 'black', 'is_bgm', 'bt', 'bc', 'wt', 'wc', 'temp', 'order_tj', 'order_sx', 'rate_add',
                'count_rate', 'insert_type', 'currentPage', 'pageSize', 'totalPage', 'totalRecord', 'shape_en',
                'location_en', 'is_own_filter_stock', 'num_all', 'isown', 'app_check_code', 'sign', 'sessionkey',
-               'status', 'girdle', 'video', 'cgno', 'remark', 'disc2', 'rate1']
+               'status', 'girdle', 'video', 'cgno', 'remark', 'disc2', 'rate1', 'pavilion_height', 'crown_height',
+               'arrows', 'pavilion_angle', 'crown_angle', 'girdle_percentage', 'kts', 'laser_inscription', 'heart',
+               'cert_type', 'col_tinge', 'reportComment', 'luster']
     print(csv_txt)
     with open("tab.csv", 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=csv_txt)
         writer.writeheader()
-        for i in range(1, 10):
+        for i in range(1, 5):
             print("i:", i)
             params = {
                 "uid": "1587547404780001",
@@ -53,11 +55,11 @@ if __name__ == '__main__':
                 "is_accurate_and_detail": 1,
                 "detail": 10402,
                 "rap_ids": "",
-                "d_size_min": 0.45,
-                "d_size_max": 0.54,
+                "d_size_min": 0.52,
+                "d_size_max": 0.56,
                 "shape": "%E5%9C%86%E5%BD%A2",
                 "cut": "EX",
-                "color": "D,E",
+                "color": "E,F",
                 "clarity": "FL,IF,VVS1,VVS2",
                 "polish": "EX",
                 "sym": "EX",
@@ -74,5 +76,6 @@ if __name__ == '__main__':
                 "http://www.taogia.com/diamondCert/pc/diamondCert_interface_FindPageList_many_all_view_manager_specialty.xhtml",
                 params, headers=headers)
             data = rep.json().get("list")
+            print(data)
             for j in data:
                 writer.writerow(j)

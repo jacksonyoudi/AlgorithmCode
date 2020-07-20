@@ -44,6 +44,12 @@ if __name__ == '__main__':
         reader = csv.DictReader(csvfile)
         for row in reader:
             report_no = row.get("reportNo")
+            if row.get("d_depth") and float(row.get("d_depth")) < 60 and float(row.get("d_depth")) > 62.3:
+                print("d_depth", row.get("d_depth"))
+                continue
+            if row.get("d_table") and float(row.get("d_table")) < 54 and float(row.get("d_table")) > 58:
+                print("d_table", row.get("d_table"))
+
             print("Report No", report_no)
             data = rds.get(report_no)
             if data:
