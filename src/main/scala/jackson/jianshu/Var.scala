@@ -12,4 +12,9 @@ object Var {
     println(j)
 
   }
+
+
+  def sayHello(): Nothing = {
+    throw new Exception("exceptions")
+  }
 }
