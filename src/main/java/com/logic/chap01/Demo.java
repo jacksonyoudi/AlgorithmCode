@@ -11,5 +11,8 @@ public class Demo {
         char m = 'A';
 
         System.out.println(m);
+
+
+
     }
 }
