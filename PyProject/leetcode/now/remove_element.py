@@ -11,4 +11,4 @@ class Solution:
 
         for i in nums:
             if i == val:
-                nums[one] = two
+                # nums[one] =
