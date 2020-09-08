@@ -7,14 +7,20 @@ class ListNode:
 
 class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
-        if head is None:
-            return 0
-        result = []
-        while head:
-            result.append(head.val)
-            head = head.next
-        r = 0
-        for i, v in enumerate(result[::-1]):
-            r += v * pow(2, i)
+        # if head is None:
+        #     return 0
+        # result = []
+        # while head:
+        #     result.append(head.val)
+        #     head = head.next
+        # r = 0
+        # for i, v in enumerate(result[::-1]):
+        #     r += v * pow(2, i)
+        #
+        # return r
 
-        return r
+        ans = 0
+        while head:
+            ans = ans * 2 + head.val
+            head = head.next
+        return ans
