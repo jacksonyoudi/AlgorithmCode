@@ -13,11 +13,11 @@ class ListNode:
 
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        if not head.next or head:
+        if not head or head.next:
             return head
         after = head.next
         cur = self.reverseList(after)
-        head.next.next = head
+        cur.next = head
         head.next = None
         return cur
 
