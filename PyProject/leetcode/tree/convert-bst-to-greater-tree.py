@@ -6,17 +6,18 @@ class TreeNode:
         self.right = None
 
 
-def dfs(root: TreeNode):
-    nonlocal total
-    if root:
-        dfs(root.right)
-        total += root.val
-        root.val = total
-        dfs(root.left)
-
-
 class Solution:
+    def __init__(self):
+        self.sum = 0
+
     def convertBST(self, root: TreeNode) -> TreeNode:
-        total = 0
-        dfs(root)
+        if not root:
+            return root
+
+        self.convertBST(root.right)
+
+        self.sum += root.val
+        root.val = self.sum
+
+        self.convertBST(root.left)
         return root
