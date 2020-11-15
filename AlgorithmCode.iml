@@ -5,6 +5,7 @@
       <configuration sdkName="Python 3.8 (py38)" />
     </facet>
   </component>
+  <component name="Go" enabled="true" />
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -171,5 +172,6 @@
     <orderEntry type="library" name="Maven: org.apache.parquet:parquet-format:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.parquet:parquet-jackson:1.10.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.spark:spark-streaming_2.12:3.0.0" level="project" />
+    <orderEntry type="library" name="Python 3.8 (py38) interpreter library" level="application" />
   </component>
 </module>
