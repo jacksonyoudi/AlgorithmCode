@@ -2,7 +2,7 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.8 (py38)" />
+      <configuration sdkName="Python 3.8 (cloudcontrol)" />
     </facet>
   </component>
   <component name="Go" enabled="true" />
@@ -172,6 +172,6 @@
     <orderEntry type="library" name="Maven: org.apache.parquet:parquet-format:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.parquet:parquet-jackson:1.10.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.spark:spark-streaming_2.12:3.0.0" level="project" />
-    <orderEntry type="library" name="Python 3.8 (py38) interpreter library" level="application" />
+    <orderEntry type="library" name="Python 3.8 (cloudcontrol) interpreter library" level="application" />
   </component>
 </module>
