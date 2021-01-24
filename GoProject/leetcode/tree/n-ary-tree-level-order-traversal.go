@@ -9,7 +9,6 @@ func levelOrder(root *Node) (res [][]int) {
 		if len(roots) == 0 {
 			return
 		}
-
 		for _, node := range roots {
 			if node != nil {
 				nodeVals = append(nodeVals, node.Val)
