@@ -20,6 +20,22 @@ func helper(root *Node, res []int) []int {
 	return res
 }
 
-func preorder(root *Node) []int {
-	return helper(root, []int{})
+//func preorder(root *Node) []int {
+//	return helper(root, []int{})
+//}
+
+func preorder(root *Node) (res []int) {
+	var npreorder func(root *Node)
+	npreorder = func(root *Node) {
+		if root == nil {
+			return
+		}
+		res = append(res, root.Val)
+		for _, node := range root.Children {
+			npreorder(node)
+		}
+	}
+	npreorder(root)
+	return
+
 }
