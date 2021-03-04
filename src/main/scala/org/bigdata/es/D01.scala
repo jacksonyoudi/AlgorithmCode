@@ -1,7 +1,7 @@
 package org.bigdata.es
 
 import org.apache.spark.{SparkConf, SparkContext}
-import org.elasticsearch.spark._
+//import org.elasticsearch.spark._
 
 object D01 {
   def main(args: Array[String]): Unit = {
@@ -13,7 +13,7 @@ object D01 {
     // map方式
     val numbers = Map("one" -> 1, "two" -> 2, "three" -> 3)
     val airports = Map("arrival" -> "Otopeni", "SFO" -> "San Fran")
-    sc.makeRDD(Seq(numbers, airports)).saveToEs("spark/docs")
+//    sc.makeRDD(Seq(numbers, airports)).saveToEs("spark/docs")
 
   }
 }

@@ -1,7 +1,7 @@
 package org.bigdata.es
 
 import org.apache.spark.{SparkConf, SparkContext}
-import org.elasticsearch.spark._
+//import org.elasticsearch.spark._
 
 
 object D03 {
@@ -13,7 +13,7 @@ object D03 {
 
     val json1 = """{"reason" : "business", "airport" : "SFO"}"""
     val json2 = """{"participants" : 5, "airport" : "OTP"}"""
-    sc.makeRDD(Seq(json1, json2)).saveToEs("spark/json-trips")
+//    sc.makeRDD(Seq(json1, json2)).saveToEs("spark/json-trips")
 
   }
 }

@@ -2,7 +2,7 @@ package org.bigdata.es
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-import org.elasticsearch.spark.rdd.EsSpark
+//import org.elasticsearch.spark.rdd.EsSpark
 
 object D02 {
   def main(args: Array[String]): Unit = {
@@ -14,7 +14,7 @@ object D02 {
     val lastWeekTrip: Trip = Trip("MUC", "OTP")
 
     val rdd: RDD[Trip] = sc.makeRDD(Seq(upcomingTrip, lastWeekTrip))
-    EsSpark.saveToEs(rdd, "spark/docs", Map("es.mapping.id" -> "id"))
+//    EsSpark.saveToEs(rdd, "spark/docs", Map("es.mapping.id" -> "id"))
   }
 }
 
