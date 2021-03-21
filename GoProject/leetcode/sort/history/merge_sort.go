@@ -28,7 +28,6 @@ func mergeSort(arr []int) []int {
 	result = append(result, left[i:]...)
 	result = append(result, right[j:]...)
 
-	fmt.Println(result)
 	return result
 }
 

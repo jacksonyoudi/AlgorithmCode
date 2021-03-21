@@ -1,9 +1,9 @@
 package main
 
-func help() {
-
-}
-
 func reverseString(s []byte) {
+	if len(s) <= 1 {
+		return
+	}
+
 
 }
