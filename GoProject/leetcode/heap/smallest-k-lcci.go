@@ -25,7 +25,7 @@ func quick_sort(nums []int, start int, end int) {
 
 }
 
-func smallestK(arr []int, k int) []int {
+func getLeastNumbers(arr []int, k int) []int {
 	quick_sort(arr, 0, len(arr)-1)
 	return arr[:k]
 
