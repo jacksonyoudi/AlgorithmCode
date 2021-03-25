@@ -6,7 +6,7 @@
     </facet>
   </component>
   <component name="Go" enabled="true" />
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -19,6 +19,7 @@
     <orderEntry type="library" name="scala-sdk-2.12.10" level="application" />
     <orderEntry type="library" name="Python 3.8 (cloudcontrol) interpreter library" level="application" />
     <orderEntry type="library" name="scala-sdk-2.13.4" level="application" />
+    <orderEntry type="library" name="scala-sdk-2.12.12" level="application" />
     <orderEntry type="library" name="Maven: org.apache.spark:spark-core_2.12:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.8" level="project" />
     <orderEntry type="library" name="Maven: org.apache.avro:avro:1.8.2" level="project" />
@@ -174,6 +175,5 @@
     <orderEntry type="library" name="Maven: org.apache.parquet:parquet-format:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.parquet:parquet-jackson:1.10.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.spark:spark-streaming_2.12:3.0.0" level="project" />
-    <orderEntry type="library" name="scala-sdk-2.12.12" level="application" />
   </component>
 </module>
