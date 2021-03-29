@@ -4,12 +4,14 @@ import "os"
 
 type DjSet struct {
 	parent []int
+	rank   []int
 	size   int
 }
 
 func NewDjset(size int) *DjSet {
 	d := &DjSet{
 		parent: make([]int, size),
+		rank:   make([]int, size),
 		size:   size,
 	}
 	d.initialise()
@@ -19,6 +21,7 @@ func NewDjset(size int) *DjSet {
 func (d *DjSet) initialise() {
 	for i := 0; i < d.size; i++ {
 		d.parent[i] = -1
+		d.rank[i] = 0
 	}
 }
 
@@ -39,7 +42,14 @@ func (d *DjSet) unionVertices(x int, y int) int {
 	if rootX == rootY {
 		return 0
 	} else {
-		d.parent[rootX] = rootY
+		if d.rank[rootX] > d.rank[rootX] {
+			d.parent[rootY] = rootX
+		} else if d.rank[rootX] < d.rank[rootX] {
+			d.parent[rootX] = rootY
+		} else {
+			d.parent[rootX] = rootY
+			d.rank[rootY] += 1
+		}
 		return 1
 	}
 
@@ -47,11 +57,12 @@ func (d *DjSet) unionVertices(x int, y int) int {
 
 func main() {
 
-	edges := [5][2]int{
+	edges := [][]int{
 		{0, 1},
 		{1, 2},
 		{1, 3},
 		{3, 4},
+		{5, 4},
 		{2, 5},
 	}
 
