@@ -40,3 +40,15 @@ CAFE BABE
 引导类加载器
 自定义加载器
 
+
+
+### JVM栈
+
+-Xss 调整大小
+
+栈：
+
+栈帧：
+    局部表 local variable
+     
+
