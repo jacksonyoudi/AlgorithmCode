@@ -43,4 +43,81 @@ exec执行，其中一个失败， 不影响其他的
    
 3. 乐观锁造成库存遗留问题
    
-    lua脚本语言 
+    lua脚本语言
+
+
+
+### 持久化
+
+#### RDB
+
+
+
+在指定的时间间隔内将内存中数据集快照写入磁盘中
+
+snapshot 
+
+dump.rdb 文件
+
+
+
+持久化的规则
+```shell
+save 3600 1
+save 300  100
+save 60 10000
+```
+
+
+##### save VS  bgsave
+
+save只管备份，其他的不管， 进行阻塞，其他的都不能操作
+bgsave: redis会在后台异步进行快照操作，快照同时还是可以响应客户端请求
+可以通过lastsave
+
+
+flushall
+
+stop-writes-on-bgsave-error yes
+
+checksum yes
+
+
+
+
+缺点： 最后一次持久化后的数据可能丢失(还未触发)
+
+wof写时复制
+
+
+#### redis备份
+
+
+### AOF
+append only file
+
+日志追加的方式， 只记录写的方式
+
+以AOF为准
+
+redis-check-aof  --fix xx.aof
+
+同步频率设置
+appendfsync 
+
+always
+everysec
+no 操作系统负责
+
+
+
+
+bgrewrite
+    64M
+
+
+
+
+
+
+
