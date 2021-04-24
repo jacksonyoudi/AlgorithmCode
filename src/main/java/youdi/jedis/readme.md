@@ -115,6 +115,37 @@ no 操作系统负责
 bgrewrite
     64M
 
+ ```shell
+>info replication
+
+在slave上执行
+slaveof master:port
+```
+
+
+
+slaveof no one
+
+
+
+
+### 哨兵模式
+
+```shell
+slaveof host port
+```
+
+sentinel.conf
+
+```shell
+sentinel monitor mymaster host port cnt
+cnt：多少个哨兵同意数据迁移
+
+
+26379
+
+
+```
 
 
 
