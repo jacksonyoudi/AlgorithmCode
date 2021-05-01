@@ -17,8 +17,6 @@ public class D01 {
 
         // classpath: hbase-default.xml  hbase-site.xml
 
-        conf.set("hbase.zookeeper.quorum", "192.xx");
-        conf.set("hbase.zookeeper.property.clientPort", "2181");
 
         Connection conn = ConnectionFactory.createConnection(conf);
 
