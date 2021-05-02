@@ -190,6 +190,37 @@ HFile
 
 
 
+### 类加载器
+
+1. 启动类加载器
+    c++实现的,加载java的核心类库
+2. 扩展类加载器 sun.misc.Launcher$ExtClassLoader
+   扩展类加载器加载java扩展类库
+3. 应用类加载器
+    加载classPath下面的类的
+   
+双亲委派机制
+
+
+
+### hbase索引
+
+索引表
+
+user info:name youdi
+
+
+动态列
+user_index 
+    
+    rowkey info:youdi
+    rowkey info:jackson
+
+
+    
+
+
+
 
 
 
