@@ -222,29 +222,89 @@ user_index
 ### 协处理器
 
 
-    
+
+
+### 高可用
 
 
 
 
+### 预分区
+
+regionserver维护 region的 StartRowKey  EndRowKey
+
+middleKey
+
+split 
+
+数据倾斜
+
+
+提前将分区设置好，减少合并以及split的操作
+
+
+1. 手动设定预分区
+```shell
+create 'tablename','info','partition1',SPLITS => ['1001','2000','3000','4000']
+
+```
+2. 生成16进制序列预分区
+
+```shell
+create 'table1','info','partition2',{
+  NUMREGIONS =>15,SPLITALGO => 'HEXSTRINGSplit'
+}
+
+```
+
+3. 按照文件中设置的规则预分区
+创建splits.txt文件内容如下
+   
+```shell
+aaaa
+bbbb
+cccc
+dddd
+```
+然后执行
+```shell
+create 'table','partion2',SPLITS_FILE => 'splits.txt'
+
+```
+
+4. 使用JAVAAPI创建预分区
 
 
 
+#### rowkey设计原则
+
+1. 唯一性原则(类似关系型数据库的主键)
+2. 长度原则 (满足需求的，越短越好  60-80字节)
+3. 散列原则(让rowkey均匀分配)
+
+
+```shell
+1. hash 随机数 散列值
+2. 字符串翻转
+3. 字符串拼接
 
 
 
+```
 
 
+### 内存优化
+stop the work
 
 
+```shell
+
+Hstorewe文件大小
+hbase.hregion.max.filesize    10G
+```
 
 
-
-
-
-
-
-
+### flush compact split机制
 
 
 
