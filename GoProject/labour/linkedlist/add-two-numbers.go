@@ -4,30 +4,19 @@ package linkedlist
  * Definition for singly-linked list.
  */
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	// merge
 
-	first := l1.Val + l2.Val
 	nextVal := 0
-	if first >= 10 {
-		nextVal = 1
-		first = first - 10
-	}
-
 	head := &ListNode{
-		first,
+		-1,
 		nil,
 	}
 
 	current := head
 
-	l1Next := l1.Next
-	l2Next := l2.Next
+	l1Next := l1
+	l2Next := l2
 
 	for l1Next != nil || l2Next != nil {
 		one := 0
@@ -59,5 +48,5 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		current.Next = &ListNode{Val: 1, Next: nil}
 	}
 
-	return head
+	return head.Next
 }
