@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package bfs
 
 // 通过数据结构进行构造成树，然后再配合bfs
 
@@ -27,9 +25,8 @@ func (t *Tree) Add(n []int) {
 		t.nodes[one] = oneNode
 		t.nodeVals[one] = 1
 	}
-	t.nodes[one] = oneNode
 
-	twoNode, ok := t.nodes[two]
+	twoNode, ok := t.nodes[one]
 	if !ok {
 		twoNode = &NTreeNode{
 			Val:      two,
@@ -40,7 +37,6 @@ func (t *Tree) Add(n []int) {
 	}
 
 	twoNode.Children = append(twoNode.Children, oneNode)
-	t.nodes[two] = twoNode
 }
 
 func (t *Tree) FlushRoot() {
@@ -59,7 +55,8 @@ func (t *Tree) FlushRoot() {
 			}
 		}
 	}
-	for j, _ := range allVals {
+
+	for _, j := range allVals {
 		tmp := t.nodes[j]
 		t.roots = append(t.roots, tmp)
 	}
@@ -70,6 +67,7 @@ func (t *Tree) Roots() []*NTreeNode {
 }
 
 func helperdfs(root *NTreeNode, depth int, result []int) ([]int, bool) {
+
 	if depth == 0 {
 		return result, true
 	}
@@ -77,6 +75,7 @@ func helperdfs(root *NTreeNode, depth int, result []int) ([]int, bool) {
 	if root == nil {
 		return []int{}, false
 	}
+
 
 	newResult := append(result, root.Val)
 
@@ -118,8 +117,8 @@ func findOrder(numCourses int, prerequisites [][]int) []int {
 
 	// 构造树
 	tree := &Tree{
-		nodes:    make(map[int]*NTreeNode),
-		roots:    make([]*NTreeNode, 0),
+		nodes: make(map[int]*NTreeNode),
+		roots: make([]*NTreeNode, 0),
 		nodeVals: make(map[int]int),
 	}
 
@@ -127,14 +126,6 @@ func findOrder(numCourses int, prerequisites [][]int) []int {
 		tree.Add(prerequisite)
 	}
 	tree.FlushRoot()
-
 	return tree.bfs(numCourses)
 
-}
-
-func main() {
-
-	a := []int{1, 0}
-	ints := findOrder(2, [][]int{a})
-	fmt.Println(ints)
 }
