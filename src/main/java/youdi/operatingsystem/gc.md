@@ -78,9 +78,86 @@ GC通过不断的执行Root Tracking算法找到需要回收的元素
 黑色： 一种确定的状态： 不会被回收
 
 
+算法实现过程中， 假设有两个全局变量是已知的：
+
+* heapset中拥有所有的对象
+* rootSet中拥有所有的RootObject
+
+```shell
+for obj in heapSet {
+  obj.color = white
+}
+
+
+
+func mark(obj) {
+  if obj.color == white {
+    obj.color = black
+    for v in references(obj) {
+      mark(v)
+}
+}}
+
+
+for root in rootSet {
+  mark(root)
+}
+
+// 遍历整个heapSet找到白色的对象进行回收
+
+for obj in heapSet {
+  if obj.color == white {
+    free(obj)
+  }
+}
+```
+
+
+
+算法有两个阶段
+1. 标记阶段
+2. 清除阶段
+
+浮动垃圾 float Garbage
+
+希望GC能够增量回收
+
+
+
+### 如何解决内存的循环引用问题？
+root tracking算法
+    
+
+
+
+### 标记清除算法(mark sweep) 算法
+标记程序  找到不用的内存
+清除程序 sweep  回收不用的资源
+变更程序    用户程序对内存进行了修改 mutation 
+
+
+不允许并行执行
+
+read  on write 一遍读
+
+合并版本
+stw
+
+
+
+### 三色标记-清除算法(Tri-Color Mark Sweep)
+白色： 需要GC的对象
+黑色： 确定不需要GC的对象
+灰色： 可能不需要GC的对象(增量任务)
+
+
+
+
+初始化完成后， 会启动标记任务，在标记程序中， 可以暂停标记程序执行mutation
 
 
 
 
 
+![wqDRci](https://raw.githubusercontent.com/jacksonyoudi/images/main/uPic/wqDRci.png)
 
