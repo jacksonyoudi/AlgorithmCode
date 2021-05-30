@@ -19,6 +19,7 @@ func NewDjset(size int) *DjSet {
 
 }
 
+// 初始化，
 func (d *DjSet) initial() {
 	for i := 0; i < d.size; i++ {
 		d.parent[i] = -1
