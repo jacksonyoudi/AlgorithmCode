@@ -2,7 +2,7 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.8 (cloudcontrol)" />
+      <configuration sdkName="" />
     </facet>
   </component>
   <component name="Go" enabled="true" />
@@ -18,8 +18,12 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="scala-sdk-2.12.10" level="application" />
-    <orderEntry type="library" name="Python 3.8 (cloudcontrol) interpreter library" level="application" />
     <orderEntry type="library" name="scala-sdk-2.13.4" level="application" />
+<<<<<<< HEAD
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.12.10" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-reflect:2.12.10" level="project" />
+=======
+>>>>>>> 8848847b4a41e03cb529de8cc188e01c21e1c53b
     <orderEntry type="library" name="scala-sdk-2.12.12" level="application" />
     <orderEntry type="library" name="Maven: org.apache.spark:spark-core_2.12:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.8" level="project" />
@@ -136,6 +140,8 @@
     <orderEntry type="library" name="Maven: org.apache.parquet:parquet-format:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.parquet:parquet-jackson:1.10.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.spark:spark-streaming_2.12:3.0.0" level="project" />
+<<<<<<< HEAD
+=======
     <orderEntry type="library" name="Maven: org.apache.hbase:hbase-client:2.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-protobuf:3.4.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase:hbase-common:2.4.2" level="project" />
@@ -281,5 +287,6 @@
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.50.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport-native-epoll:4.1.50.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport-native-unix-common:4.1.50.Final" level="project" />
+>>>>>>> 8848847b4a41e03cb529de8cc188e01c21e1c53b
   </component>
 </module>
