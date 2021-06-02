@@ -12,12 +12,15 @@ func permuteBfs(d *PermuteData, tmpR []int, nums []int) {
 	}
 
 	for i, v := range nums {
+		tR := make([]int, 0)
+		tR = append(tR,  tmpR...)
+
 		tmp := make([]int, 0)
 		tmp = append(tmp, nums[0:i]...)
 		tmp = append(tmp, nums[i+1:]...)
-		tmpR = append(tmpR, v)
+		tR = append(tR, v)
 
-		permuteBfs(d, tmpR, tmp)
+		permuteBfs(d, tR, tmp)
 	}
 
 }

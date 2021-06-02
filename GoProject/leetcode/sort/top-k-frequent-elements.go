@@ -49,7 +49,19 @@ func topKFrequent(nums []int, k int) []int {
 	return result
 }
 
+func tmp() {
+	a := []int{1, 2, 3, 4, 5}
+
+	for i, _ := range a {
+		tmp := make([]int, 0)
+		tmp = append(tmp,a[0:i]...)
+		tmp = append(tmp,a[i+1:]...)
+		fmt.Println(tmp)
+	}
+
+}
+
 func main() {
 	fmt.Println(topKFrequent([]int{1, 1, 1, 2, 2, 3}, 2))
-
+	tmp()
 }
