@@ -18,12 +18,12 @@ func (d *DjSet) Find(index int) int {
 	return root
 }
 
-func (d *DjSet) Union(x, y int) {
+func (d *DjSet) Union(x, y int) int {
 	xRoot := d.Find(x)
 	yRoot := d.Find(y)
 
 	if yRoot == xRoot {
-		return
+		return 0
 	}
 
 	if d.rank[xRoot] > d.rank[yRoot] {
@@ -34,5 +34,5 @@ func (d *DjSet) Union(x, y int) {
 		d.parent[xRoot] = yRoot
 		d.rank[yRoot] += 1
 	}
-
+	return 1
 }
