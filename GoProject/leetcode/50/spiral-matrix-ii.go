@@ -11,7 +11,7 @@ func generateMatrix(n int) [][]int {
 
 	result := make([][]int, 0)
 	for i := 0; i < n; i++ {
-		tmp := make([]int, n)
+		tmp := make([]int, 0)
 
 		for j := 0; j < n; j++ {
 			tmp = append(tmp, -1)
