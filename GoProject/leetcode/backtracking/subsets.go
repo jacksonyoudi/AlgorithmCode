@@ -13,7 +13,9 @@ func subseetsBackTrace(nums []int, index int, box []int, anwers *subsetsData) {
 	}
 
 	for i := index; i < ll; i++ {
-		m := append(box, nums[i])
+		m := []int{}
+		m = append(m, box...)
+		m = append(m, nums[i])
 		subseetsBackTrace(nums, i+1, m, anwers)
 	}
 
