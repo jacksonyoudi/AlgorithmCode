@@ -179,6 +179,25 @@ log end offset: 每个副本的最后一个offset
 单分区： 
 
 
+## 分区不能减少， 保护消费者
+
+
+
+### zookeper在kafka中作用
+kafka集群中有一个broker会被选举为controller, 负责管理集群的broker的上下线。
+所有topic的分区副本分配和leader选举等工作。 
+
+controller的管理工作都是依赖于zookeeper的
+
+
+
+
+## kafka事务
+
+生产者事务
+
+Transaction id
+ 
 
 
 
