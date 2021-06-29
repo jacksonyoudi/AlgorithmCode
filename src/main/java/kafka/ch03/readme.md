@@ -197,6 +197,10 @@ controller的管理工作都是依赖于zookeeper的
 生产者事务
 
 Transaction id
+
+
+
+
  
 
 
