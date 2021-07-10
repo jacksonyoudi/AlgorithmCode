@@ -111,6 +111,85 @@ lock会出现死锁的情况
 
 
 
+### synchronized 
+
+1. 锁的是谁
+2. 范围
+
+
+
+
+method的 锁定的 是 this 对象
+
+static method 锁定的是 class 对象 
+
+java中每一个对象都可以作为锁
+
+对于普通方法，锁是当前实例对象
+对于静态同步方法，锁是当前类的class对象
+对于同步代码块，锁时 synchronized 括号里配置的对象
+
+
+
+
+### 公平锁和非公平锁
+
+```shell
+    public ReentrantLock() {
+        sync = new NonfairSync();
+    }
+
+
+    public ReentrantLock(boolean fair) {
+        sync = fair ? new FairSync() : new NonfairSync();
+    }
+```
+
+
+非公平锁：
+1. 线程可能会饿死
+2. 效率高 
+
+
+公平锁
+1. 阳光普照
+2. 效率相对低
+
+
+
+
+### 可重入锁 递归锁
+synchronized隐式的，Lock显式的都是可重入的
+
+lock成对出现
+
+
+
+### 死锁
+1. 什么是死锁
+    持有
+    互相等待
+    互斥
+    不能剥夺
+    循环等待
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
