@@ -173,8 +173,44 @@ lock成对出现
     不能剥夺
     循环等待
    
+   
+2. 验证死锁
+
+jps 
+jstack  jvm自带的 堆栈追踪工具
 
 
+
+### 创建多线程方式
+
+1. Tread 
+2. Runable 没有返回值 
+3. callable 有返回值
+
+
+1.是否有返回值
+2. 是否会抛出异常
+3. 实现方法名称不同 call run
+
+
+### CountDownLatch
+
+
+
+### CyclicBarrier
+
+
+### Segement
+
+### 乐观锁 和 悲观锁
+
+ 表锁
+ 行锁 
+
+
+
+读锁： 共享锁，发生死锁
+写锁： 独占锁， 发生死锁
 
 
 
