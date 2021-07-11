@@ -39,14 +39,14 @@ class MyCache {
     public Object get(String key) {
         lock.readLock().lock();
 
-
+        Object result = null;
         try {
 
             System.out.println(Thread.currentThread().getName() + " 正在读取" + key);
 
             TimeUnit.MICROSECONDS.sleep(300);
 
-            Object result = map.get(key);
+             result = map.get(key);
             System.out.println(Thread.currentThread().getName() + " 读完了");
 
             return result;
@@ -56,7 +56,7 @@ class MyCache {
         } finally {
             lock.readLock().unlock();
         }
-
+        return result;
     }
 }
 

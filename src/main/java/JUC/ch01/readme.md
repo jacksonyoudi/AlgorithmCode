@@ -215,6 +215,64 @@ jstack  jvm自带的 堆栈追踪工具
 
 
 
+### 线程池 
+
+1. 减少开销
+2. 提高响应
+
+
+
+```shell
+    public ThreadPoolExecutor(int corePoolSize,
+                              int maximumPoolSize,
+                              long keepAliveTime,
+                              TimeUnit unit,
+                              BlockingQueue<Runnable> workQueue,
+                              ThreadFactory threadFactory,
+                              RejectedExecutionHandler handler) {
+        if (corePoolSize < 0 ||
+            maximumPoolSize <= 0 ||
+            maximumPoolSize < corePoolSize ||
+            keepAliveTime < 0)
+            throw new IllegalArgumentException();
+        if (workQueue == null || threadFactory == null || handler == null)
+            throw new NullPointerException();
+        this.acc = System.getSecurityManager() == null ?
+                null :
+                AccessController.getContext();
+        this.corePoolSize = corePoolSize;
+        this.maximumPoolSize = maximumPoolSize;
+        this.workQueue = workQueue;
+        this.keepAliveTime = unit.toNanos(keepAliveTime);
+        this.threadFactory = threadFactory;
+        this.handler = handler;
+    }
+
+
+corePoolSize: 常驻线程数量
+maximumPoolSize： 最大线程数量
+keepAliveTime: 存活时间
+unit： 单位
+workQueue：  阻塞队列
+threadFactory： 线程工厂
+handler： 拒绝策略
+
+```
+
+
+#### 拒绝策略
+1. 默认策略
+直接抛异常
+   
+2. callerRunsPolicy 调用者运行
+
+3. discardoldestPolicy
+
+4. discardPolicy
+
+
+
+
 
 
 
