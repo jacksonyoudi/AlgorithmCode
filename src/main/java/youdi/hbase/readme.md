@@ -1,4 +1,4 @@
-### Hbase安装
+˜### Hbase安装
 
 管理页面 http://localhost:16010/
 
