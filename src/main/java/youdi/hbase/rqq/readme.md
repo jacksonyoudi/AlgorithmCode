@@ -104,3 +104,8 @@ metacache 缓存到客户端
 
 scan： 
 loadcache
+
+
+lsm
+
+
