@@ -271,4 +271,9 @@
     <orderEntry type="library" name="Maven: io.netty:netty-transport-native-epoll:4.1.50.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport-native-unix-common:4.1.50.Final" level="project" />
   </component>
+  <component name="copyright">
+    <Base>
+      <setting name="state" value="2" />
+    </Base>
+  </component>
 </module>
