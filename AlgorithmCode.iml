@@ -2,7 +2,7 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.8 (cloudcontrol)" />
+      <configuration sdkName="" />
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
@@ -16,7 +16,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Python 3.8 (cloudcontrol) interpreter library" level="application" />
     <orderEntry type="library" name="scala-sdk-2.12.12" level="application" />
     <orderEntry type="library" name="Maven: org.apache.spark:spark-core_2.12:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.8" level="project" />
@@ -278,5 +277,10 @@
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.50.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport-native-epoll:4.1.50.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport-native-unix-common:4.1.50.Final" level="project" />
+  </component>
+  <component name="copyright">
+    <Base>
+      <setting name="state" value="2" />
+    </Base>
   </component>
 </module>
