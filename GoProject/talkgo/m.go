@@ -28,7 +28,8 @@ func main() {
 func controlApi(apiList []string) {
 	dataCh := make(chan string, N)
 	end := make(chan bool)
-	ctx, _ := context.WithCancel(context.Background())
+	fail := make(chan bool)
+	ctx, cancel := context.WithCancel(context.Background())
 
 	go production(dataCh, apiList, end)
 	go consume(ctx, dataCh, end)
@@ -37,17 +38,31 @@ func controlApi(apiList []string) {
 		select {
 		case data := <-end:
 			fmt.Println(data)
-
-
-		case <-ctx.Done():
-			fmt.Println("end------------------")
+			os.Exit(0)
+		case <-fail:
+			cancel()
 			os.Exit(1)
 		}
 	}
 }
 
+func iscanceled(ctx context.Context) bool {
+	select {
+	case <-ctx.Done():
+		return true
+	default:
+		return false
+	}
+}
+
+
 func callApi(ctx context.Context, api string) error {
 	// handling api here
+	for {
+
+	}
+
+
 	return nil
 }
 
