@@ -5,6 +5,7 @@
       <configuration sdkName="" />
     </facet>
   </component>
+  <component name="Go" enabled="true" />
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -139,10 +140,9 @@
     <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-gson:3.4.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase:hbase-hadoop-compat:2.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase:hbase-hadoop2-compat:2.4.2" level="project" />
-    <orderEntry type="library" name="Maven: javax.activation:javax.activation-api:1.2.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: javax.activation:javax.activation-api:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase:hbase-protocol-shaded:2.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase:hbase-protocol:2.4.2" level="project" />
-    <orderEntry type="library" name="Maven: javax.annotation:javax.annotation-api:1.2" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.13" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-miscellaneous:3.4.1" level="project" />
@@ -165,7 +165,6 @@
     <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-jetty:3.4.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-jersey:3.4.1" level="project" />
     <orderEntry type="library" name="Maven: javax.ws.rs:javax.ws.rs-api:2.1.1" level="project" />
-    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase:hbase-procedure:2.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase:hbase-zookeeper:2.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase:hbase-replication:2.4.2" level="project" />
@@ -181,6 +180,15 @@
     <orderEntry type="library" name="Maven: com.lmax:disruptor:3.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-distcp:2.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-annotations:2.10.0" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: jdk.tools:jdk.tools:1.8">
+        <CLASSES>
+          <root url="jar:///Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/../lib/tools.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-hdfs:2.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty:6.1.26" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty-util:6.1.26" level="project" />
@@ -248,6 +256,7 @@
     <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-api:9.4.20.v20190813" level="project" />
     <orderEntry type="library" name="Maven: org.jline:jline:3.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-yarn-common:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.2.11" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-client:1.19" level="project" />
     <orderEntry type="library" name="Maven: com.google.inject:guice:4.0" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
