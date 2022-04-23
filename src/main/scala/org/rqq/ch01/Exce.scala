@@ -41,9 +41,11 @@ object Exce {
 
   def matcher(regex: String): PartialFunction[String, List[String]] = {
     // 偏函数， map + filter的逻辑
-    return PartialFunction[String, List[String]] {
-      case String => List(regex)
-    }
+    //    return PartialFunction[String, List[String]] {
+    //      case String => List(regex)
+    //    }
+
+    return null
   }
 
   def main(args: Array[String]): Unit = {
