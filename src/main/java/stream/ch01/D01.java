@@ -11,19 +11,19 @@ import java.util.stream.Stream;
  **/
 public class D01 {
     public static void main(String[] args) {
-        Stream.of("apple", "banana", "orange", "waltermaleon", "grape")
-                .map(String::length)
-                .forEach(e -> System.out.println(e));
-
-
-        Stream.of("apple", "banana", "orange", "waltermaleon", "grape")
-                .mapToInt(String::length)
-                .forEach(e -> System.out.println(e));
-
-        Function f = (a) -> {
-            System.out.println(a);
-            return 1;
-        }
+//        Stream.of("apple", "banana", "orange", "waltermaleon", "grape")
+//                .map(String::length)
+//                .forEach(e -> System.out.println(e));
+//
+//
+//        Stream.of("apple", "banana", "orange", "waltermaleon", "grape")
+//                .mapToInt(String::length)
+//                .forEach(e -> System.out.println(e));
+//
+//        Function f = (a) -> {
+//            System.out.println(a);
+//            return 1;
+//        }
 
     }
 }
