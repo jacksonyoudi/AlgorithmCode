@@ -6,9 +6,6 @@ object SynchronizedBadPool {
   private val tasks: mutable.Queue[() => Unit] = mutable.Queue[() => Unit]()
 
   def main(args: Array[String]): Unit = {
-    new Thread{
-      
-    }
 
   }
 }
