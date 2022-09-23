@@ -1,32 +1,28 @@
 package flatten_binary_tree_to_linked_list
 
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
-
-type TreeNode struct {
+type Node struct {
 	Val   int
-	Left  *TreeNode
-	Right *TreeNode
+	Left  *Node
+	Right *Node
+	Next  *Node
 }
 
-func helper(root *TreeNode) *TreeNode {
+func helper(node1 *Node, node2 *Node) {
+	if node1 == nil || node2 == nil {
+		return
+	}
+	node1.Next = node2
+	helper(node1.Left, node1.Right)
+	helper(node2.Left, node2.Right)
+
+	helper(node1.Right, node2.Left)
+}
+
+func connect(root *Node) *Node {
 	if root == nil {
 		return root
 	}
-
-	left := root.Left
-	right := root.Right
-
-	root.Right = left
-
-}
-
-func flatten(root *TreeNode) {
+	helper(root.Left, root.Right)
+	return root
 
 }
