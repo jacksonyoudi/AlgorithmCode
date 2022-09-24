@@ -5,5 +5,5 @@ type result struct {
 }
 
 func permuteUnique(nums []int) [][]int {
-	
+	return nil
 }
