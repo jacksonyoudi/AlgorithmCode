@@ -2,6 +2,7 @@ package youdi.boolmfilter;
 
 import java.io.Serializable;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.BitSet;
@@ -16,7 +17,7 @@ public class BloomFilter<E> implements Serializable {
     private int k;   // 一个val占多少个bit
 
 
-    static final Charset charset = Charset.forName("UTF-8");
+    static final Charset charset = StandardCharsets.UTF_8;
 
     static final String hashName = "MD5"; // MD5 gives good enough accuracy in most circumstances. Change to SHA1 if it's needed
     static final MessageDigest digestFunction;
