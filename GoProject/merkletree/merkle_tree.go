@@ -1,6 +1,7 @@
 package merkletree
 
 import (
+	"bytes"
 	"crypto/sha256"
 	"hash"
 )
@@ -92,9 +93,24 @@ func (m *MerkleTree) GetMerklePath(content Content) ([][]byte, []int64, error) {
 		if err != nil {
 			return nil, nil, err
 		}
-
 		if ok {
 			currentParent := current.Parent
+			var merklePath [][]byte
+			var index []int64
+
+			for currentParent != nil {
+				if bytes.Equal(currentParent.Left.Hash, current.Hash) {
+					merklePath = append(merklePath, currentParent.Right.Hash)
+					index = append(index, 1)
+				} else {
+					merklePath = append(merklePath, currentParent.Left.Hash)
+					index = append(index, 0)
+				}
+
+				current = currentParent
+				currentParent = currentParent.Parent
+			}
+			return merklePath, index, nil
 		}
 	}
 
