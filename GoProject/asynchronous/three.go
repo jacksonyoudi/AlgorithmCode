@@ -3,7 +3,6 @@ package asynchronous
 import (
 	"fmt"
 	"time"
-	"./async"
 )
 
 func DoAsync() int {
@@ -18,7 +17,7 @@ func DoAsync() int {
 
 func DoTest() {
 	fmt.Println("Let's start ...")
-	future := async.Exec(func() interface{} {
+	future := Exec(func() interface{} {
 		return DoAsync()
 	})
 

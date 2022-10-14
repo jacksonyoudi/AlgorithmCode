@@ -1,4 +1,4 @@
-package async
+package asynchronous
 
 import "context"
 
@@ -35,7 +35,3 @@ func Exec(f func() interface{}) Future {
 		},
 	}
 }
-
-
-
-
